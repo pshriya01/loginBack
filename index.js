@@ -5,12 +5,12 @@ const {connection} = require("./Config/db");
 const { userRouter } = require("./Routes/userRoutes");
 
 const app = express();
-
+app.use(cors())
 const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use("/users",userRouter)
-app.use(cors())
+
 
 app.get("/", (req,res)=>{
 
